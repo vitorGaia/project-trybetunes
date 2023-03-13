@@ -1,5 +1,5 @@
 import React from 'react';
-/* import { Link } from 'react-router-dom'; */
+import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 
 class Header extends React.Component {
@@ -22,9 +22,35 @@ class Header extends React.Component {
     } = this.state;
     return (
       <header data-testid="header-component">
-        <p data-testid="header-user-name">
-          { name }
-        </p>
+        <div>
+          <p data-testid="header-user-name">
+            { name }
+          </p>
+        </div>
+        <div>
+          <Link
+            data-testid="link-to-search"
+            to="/search"
+          >
+            Pesquisa
+          </Link>
+        </div>
+        <div>
+          <Link
+            data-testid="link-to-favorites"
+            to="/favorites"
+          >
+            Favoritas
+          </Link>
+        </div>
+        <div>
+          <Link
+            data-testid="link-to-profile"
+            to="/profile"
+          >
+            Perfil
+          </Link>
+        </div>
       </header>
     );
   }
