@@ -34,13 +34,14 @@ class Search extends React.Component {
     e.preventDefault();
     const { searchArtistInput } = this.state;
     const data = await searchAlbumsAPI(searchArtistInput);
-    /* if (data.resultCount === '0') this.setState({ fetchAlbunsIsOk: false }); */
-    if (data !== []) {
+    if (data.length !== 0) {
       this.setState({
         loading: false,
         albuns: data,
         fetchAlbunsIsOk: true,
       });
+    } else {
+      this.setState({ fetchAlbunsIsOk: false, loading: false });
     }
   };
 
@@ -78,8 +79,10 @@ class Search extends React.Component {
                   </button>
                 </div>
               </form>
-              { fetchAlbunsIsOk === false
-              && <p>Nenhum álbum foi encontrado</p>}
+              {
+                fetchAlbunsIsOk === false
+                && <p>Nenhum álbum foi encontrado</p>
+              }
               {
                 albuns.length !== 0
                 && <p>{ `Resultado de álbuns de: ${searchArtistInput}` }</p>
@@ -91,6 +94,7 @@ class Search extends React.Component {
                     artworkUrl100={ album.artworkUrl100 }
                     collectionName={ album.collectionName }
                     artistName={ album.artistName }
+                    collectionId={ album.collectionId }
                   />
                 ))
               }
