@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 class MusicCard extends React.Component {
   render() {
     const { tracks } = this.props;
-    tracks.shift();
 
     return (
       <div>
