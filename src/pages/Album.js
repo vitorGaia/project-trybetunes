@@ -3,22 +3,26 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
+/* import Loading from './Loading'; */
 
 class Album extends React.Component {
   state = {
     tracks: [],
     artist: '',
     album: '',
+    /* loading: false, */
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    /* this.setState({ loading: true }); */
     const { match: { params: { id } } } = this.props;
-    getMusics(id).then((r) => {
-      this.setState({
-        tracks: r,
-        artist: r[0].artistName,
-        album: r[0].collectionName,
-      });
+    const data = await getMusics(id);
+    /* console.log(data); */
+    this.setState({
+      tracks: data,
+      artist: data[0].artistName,
+      album: data[0].collectionName,
+      /* loading: false, */
     });
   }
 
@@ -27,7 +31,14 @@ class Album extends React.Component {
       tracks,
       artist,
       album,
+      /* loading, */
     } = this.state;
+    console.log(artist);
+    /* if (loading) {
+      return (
+        <Loading />
+      );
+    } */
     return (
       <div data-testid="page-album">
         <Header />
@@ -35,14 +46,14 @@ class Album extends React.Component {
           <p
             data-testid="artist-name"
           >
-            {artist}
+            {artist || 'Artist Name'}
           </p>
         </div>
         <div>
           <p
             data-testid="album-name"
           >
-            {album}
+            {album || 'Collection Name'}
           </p>
         </div>
         <MusicCard

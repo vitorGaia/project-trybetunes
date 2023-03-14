@@ -5,7 +5,6 @@ class MusicCard extends React.Component {
   render() {
     const { tracks } = this.props;
     tracks.shift();
-    /* console.log(tracks); */
 
     return (
       <div>
