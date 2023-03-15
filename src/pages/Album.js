@@ -4,6 +4,7 @@ import Header from './Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import Loading from './Loading';
 
 class Album extends React.Component {
   state = {
@@ -71,12 +72,19 @@ class Album extends React.Component {
             {album}
           </p>
         </div>
-        <MusicCard
-          tracks={ tracks }
-          fetchFavoriteSongs={ this.fetchFavoriteSongs }
-          loading={ loading }
-          favoriteSongs={ favoriteSongs }
-        />
+        {
+          loading === true ? <Loading />
+            : (
+              tracks.map((track) => (
+                <MusicCard
+                  key={ track.trackId }
+                  track={ track }
+                  fetchFavoriteSongs={ this.fetchFavoriteSongs }
+                  favoriteSongs={ favoriteSongs }
+                />
+              ))
+            )
+        }
       </div>
     );
   }
