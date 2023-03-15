@@ -40,21 +40,21 @@ class Profile extends React.Component {
                 <div>
                   <img
                     data-testid="profile-image"
-                    alt={ name }
-                    src={ image || undefined }
+                    alt={ name || 'userImage' }
+                    src={ image || 'userImage' }
                   />
-                  <Link
-                    to="/profile/edit"
-                  >
-                    Editar perfil
-                  </Link>
                 </div>
                 <p>{ name }</p>
-                <p>{ email || undefined }</p>
-                <p>{ description || undefined }</p>
+                <p>{ email || 'user@email' }</p>
+                <p>{ description || 'userDescription' }</p>
               </div>
             )
         }
+        <Link
+          to="/profile/edit"
+        >
+          Editar perfil
+        </Link>
       </div>
     );
   }
