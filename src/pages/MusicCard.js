@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
+/* import { getFavoriteSongs } from '../services/favoriteSongsAPI'; */
 
 class MusicCard extends React.Component {
   render() {
@@ -37,7 +38,8 @@ class MusicCard extends React.Component {
                       type="checkbox"
                       name={ `ckeckbox ${index}` }
                       onChange={ async (event) => fetchFavoriteSongs(track, event) }
-                      checked={ favoriteSongs.some((song) => song === track) }
+                      checked={ favoriteSongs
+                        .some((song) => song.trackId === track.trackId) }
                     />
                   </label>
                 </div>
