@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   state = {
@@ -36,7 +36,14 @@ class Album extends React.Component {
         loading: false,
       }));
     }
-    console.log('lau');
+    if (!target.checked) {
+      this.setState({ loading: true });
+      await removeSong(track);
+      this.setState(({
+        favoriteSongs: JSON.parse(localStorage.getItem('favorite_songs')),
+        loading: false,
+      }));
+    }
   };
 
   render() {

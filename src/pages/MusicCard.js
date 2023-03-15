@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
-/* import { getFavoriteSongs } from '../services/favoriteSongsAPI'; */
 
 class MusicCard extends React.Component {
   render() {
