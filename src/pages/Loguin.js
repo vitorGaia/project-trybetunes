@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../styles/Loguin.css';
+import userImage from '../images/userImage.png';
 
 class Loguin extends React.Component {
   state = {
@@ -40,10 +42,17 @@ class Loguin extends React.Component {
       loading,
     } = this.state;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="loguin-container">
         { loading && <Loading /> }
         { loading === false && <Redirect to="/search" /> }
         <form>
+          <div className="image-container">
+            <img
+              className="user-image"
+              alt="user"
+              src={ userImage }
+            />
+          </div>
           <div>
             <label>
               <input
@@ -53,6 +62,17 @@ class Loguin extends React.Component {
                 onChange={ this.handleChange }
                 value={ loguinNameInput }
                 name="loguinNameInput"
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="email"
+                placeholder="email"
+                onChange={ this.handleChange }
+                /* value={ loguinNameInput }
+                name="loguinNameInput" */
               />
             </label>
           </div>
