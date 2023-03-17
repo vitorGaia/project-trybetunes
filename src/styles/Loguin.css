@@ -4,7 +4,7 @@
 }
 
 .loguin-container {
-  background-image: url('/src/images/loguin-background2.jpg');
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/dc31d7115825285.6055d4108f299.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -56,14 +56,17 @@
   border-bottom: 3px solid #171820;
   height: 40px;
   width: 370px;
+  text-align: center;
 }
 
 .inputs-container .loguin-input:focus {
   background-color: rgb(58, 62, 62, 0.3);
 }
 
-.inputs-container .loguin-input:focus:valid {
-  background-color: rgb(58, 62, 62, 0.3);
+.inputs-container .loguin-input:valid {
+  background-color: rgb(58, 62, 62, 0.2);
+  border: none;
+  border-bottom: 3px solid #171820;
 }
 
 .inputs-container .loguin-input::placeholder {
@@ -76,7 +79,7 @@
 .button-container .loguin-button {
   width: 370px;
   height: 37px;
-  background-color: #301860;
+  background-color: #1c0649;
   border-radius: 7px;
   color: antiquewhite;
   font-weight: 500;

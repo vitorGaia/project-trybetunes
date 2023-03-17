@@ -3,6 +3,7 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from './Header';
 import Loading from './Loading';
 import CardAlbum from './CardAlbum';
+import '../styles/Search.css';
 
 class Search extends React.Component {
   state = {
