@@ -1,18 +1,87 @@
-@media only screen and (max-width: 600px) {
-  .loguin-container {
-    background-color: brown;
-    text-align: center;
-    padding: 45px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  .loguin-container form {
-    gap: 20px;
-  }
+.loguin-container {
+  background-image: url('/src/images/loguin-background2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .image-container{}
+.loguin-container .loguin-form {
+  background-color: rgba(97, 122, 122, 0.2);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
 
-  .image-container .user-image{
-    height: 200px;
-    border-radius: 50%;
-  }
+.image-container {
+  /* background-color: blue; */
+  margin-bottom: 80px;
+}
+
+.image-container .user-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid 3px #171820;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.inputs-container {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.inputs-container .loguin-input {
+  background-color: rgb(58, 62, 62, 0.1);
+  border-radius: 3px;
+  border: none;
+  border-bottom: 3px solid #171820;
+  height: 40px;
+  width: 370px;
+}
+
+.inputs-container .loguin-input:focus {
+  background-color: rgb(58, 62, 62, 0.3);
+}
+
+.inputs-container .loguin-input:focus:valid {
+  background-color: rgb(58, 62, 62, 0.3);
+}
+
+.inputs-container .loguin-input::placeholder {
+  text-align: center;
+  font-size: 18px;
+  color: #171820;
+  font-weight: 500;
+}
+
+.button-container .loguin-button {
+  width: 370px;
+  height: 37px;
+  background-color: #301860;
+  border-radius: 7px;
+  color: antiquewhite;
+  font-weight: 500;
+}
+
+.button-container .loguin-button:hover {
+  background-color: #270b5f;
 }

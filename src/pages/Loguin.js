@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 import '../styles/Loguin.css';
-import userImage from '../images/userImage.png';
+import userImage from '../images/userImage2.jpg';
 
 class Loguin extends React.Component {
   state = {
@@ -45,7 +45,7 @@ class Loguin extends React.Component {
       <div data-testid="page-login" className="loguin-container">
         { loading && <Loading /> }
         { loading === false && <Redirect to="/search" /> }
-        <form>
+        <form className="loguin-form">
           <div className="image-container">
             <img
               className="user-image"
@@ -53,39 +53,40 @@ class Loguin extends React.Component {
               src={ userImage }
             />
           </div>
-          <div>
+          <div className="inputs-container">
             <label>
               <input
+                className="loguin-input"
                 data-testid="login-name-input"
                 type="text"
-                placeholder="nome"
+                placeholder="Nome"
                 onChange={ this.handleChange }
                 value={ loguinNameInput }
                 name="loguinNameInput"
               />
             </label>
-          </div>
-          <div>
             <label>
               <input
+                className="loguin-input"
                 type="email"
-                placeholder="email"
+                placeholder="Email"
                 onChange={ this.handleChange }
                 /* value={ loguinNameInput }
                 name="loguinNameInput" */
               />
             </label>
-          </div>
-          <div>
-            <button
-              data-testid="login-submit-button"
-              type="button"
-              disabled={ loguinSubmitButton }
-              name="loguinSubmitButton"
-              onClick={ this.callCreateUser }
-            >
-              Entrar
-            </button>
+            <div className="button-container">
+              <button
+                className="loguin-button"
+                data-testid="login-submit-button"
+                type="button"
+                disabled={ loguinSubmitButton }
+                name="loguinSubmitButton"
+                onClick={ this.callCreateUser }
+              >
+                Entrar
+              </button>
+            </div>
           </div>
         </form>
       </div>
