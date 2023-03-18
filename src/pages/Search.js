@@ -55,50 +55,60 @@ class Search extends React.Component {
       fetchAlbunsIsOk,
     } = this.state;
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className="page-search">
         <Header />
         { loading === true ? <Loading />
           : (
-            <div>
-              <form>
-                <div>
-                  <input
-                    data-testid="search-artist-input"
-                    type="text"
-                    placeholder="Pesquisar"
-                    name="searchArtistInput"
-                    onChange={ this.handleChange }
-                  />
-                </div>
-                <div>
-                  <button
-                    data-testid="search-artist-button"
-                    disabled={ searchArtistButton }
-                    onClick={ this.fetchAPI }
-                  >
-                    Pesquisar
-                  </button>
-                </div>
-              </form>
-              {
-                fetchAlbunsIsOk === false
-                && <p>Nenhum álbum foi encontrado</p>
-              }
-              {
-                albuns.length !== 0
-                && <p>{ `Resultado de álbuns de: ${searchArtistInput}` }</p>
-              }
-              {
-                albuns.map((album) => (
-                  <CardAlbum
-                    key={ album.collectionId }
-                    artworkUrl100={ album.artworkUrl100 }
-                    collectionName={ album.collectionName }
-                    artistName={ album.artistName }
-                    collectionId={ album.collectionId }
-                  />
-                ))
-              }
+            <div className="search-container">
+              <div className="inputs-container">
+                <form>
+                  <div>
+                    <input
+                      data-testid="search-artist-input"
+                      type="text"
+                      placeholder="Pesquisar"
+                      name="searchArtistInput"
+                      onChange={ this.handleChange }
+                    />
+                  </div>
+                  <div>
+                    <button
+                      data-testid="search-artist-button"
+                      disabled={ searchArtistButton }
+                      onClick={ this.fetchAPI }
+                    >
+                      Pesquisar
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div className="show-search">
+                {
+                  fetchAlbunsIsOk === false
+                  && <p>Nenhum álbum foi encontrado</p>
+                }
+                {
+                  albuns.length !== 0
+                  && (
+                    <div className="albuns-result">
+                      <p>
+                        { `Resultado de álbuns de: ${searchArtistInput}` }
+                      </p>
+                    </div>
+                  )
+                }
+                {
+                  albuns.map((album) => (
+                    <CardAlbum
+                      key={ album.collectionId }
+                      artworkUrl100={ album.artworkUrl100 }
+                      collectionName={ album.collectionName }
+                      artistName={ album.artistName }
+                      collectionId={ album.collectionId }
+                    />
+                  ))
+                }
+              </div>
             </div>
           ) }
       </div>

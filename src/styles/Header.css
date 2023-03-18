@@ -1,5 +1,48 @@
 .header-container {
-  background-color: aqua;
+  background-color: #171825;
   display: flex;
   flex-direction: column;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  align-items: center;
+}
+
+.logo-container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.user-name-container {
+  margin-top: 25px;
+  position: absolute;
+  bottom: 40px;
+}
+
+.links-container {
+  /* background-color: aqua; */
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.nav-links-container {
+  width: 55%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* .nav-links-container img {
+  color: aliceblue;
+} */
+
+.nav-links {
+  text-decoration: none;
+  color: aliceblue;
 }
