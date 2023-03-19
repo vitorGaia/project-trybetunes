@@ -53,7 +53,7 @@ class Profile extends React.Component {
         <Link
           to="/profile/edit"
         >
-          Editar perfil
+          Salvar
         </Link>
       </div>
     );

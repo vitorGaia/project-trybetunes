@@ -1,7 +1,7 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import '../styles/Header.css';
 import logo from '../images/logo.png';
 import searchIcon from '../images/searchIcon.png';
 import favoritesIcon from '../images/favoritesIcon.png';
@@ -26,47 +26,65 @@ class Header extends React.Component {
       name,
     } = this.state;
     return (
-      <header className="header-container" data-testid="header-component">
-        <div className="logo-container">
-          <img src={ logo } alt="logo trybe tunes" />
+      <header
+        className="bg-black h-screen w-1/6 fixed top-0 left-0 overflow-y-auto flex-col justify-center items-center space-y-20 shadow-lg text-stone-50"
+        data-testid="header-component"
+      >
+
+        <div className="p-5">
+          <img
+            src={ logo }
+            alt="logo trybe tunes"
+            className="w-full"
+          />
         </div>
-        <div className="links-container">
-          <div className="nav-links-container">
+
+        <nav>
+
+          <div
+            className="flex justify-center p-5 space-x-3"
+          >
             <img alt="icone de busca" src={ searchIcon } />
             <Link
-              className="nav-links"
               data-testid="link-to-search"
               to="/search"
             >
-              Pesquisa
+              Search
             </Link>
           </div>
-          <div className="nav-links-container">
+
+          <div
+            className="flex justify-center p-5 space-x-3"
+          >
             <img alt="icone de favoritos" src={ favoritesIcon } />
             <Link
-              className="nav-links"
               data-testid="link-to-favorites"
               to="/favorites"
             >
-              Favoritas
+              Favorites
             </Link>
           </div>
-          <div className="nav-links-container">
+
+          <div
+            className="flex justify-center p-5 w-full space-x-4"
+          >
             <img alt="icone de perfil" src={ profileIcon } />
             <Link
-              className="nav-links"
               data-testid="link-to-profile"
               to="/profile"
             >
-              Perfil
+              Profile
             </Link>
           </div>
-        </div>
-        <div className="user-name-container">
+
+        </nav>
+
+        <div className="h-10 flex justify-center items-center">
           <p data-testid="header-user-name">
             { name }
           </p>
         </div>
+
       </header>
     );
   }

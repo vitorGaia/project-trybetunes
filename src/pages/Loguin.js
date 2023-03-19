@@ -1,9 +1,8 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
-import '../styles/Loguin.css';
-import userImage from '../images/userImage2.jpg';
 
 class Loguin extends React.Component {
   state = {
@@ -42,54 +41,60 @@ class Loguin extends React.Component {
       loading,
     } = this.state;
     return (
-      <div data-testid="page-login" className="loguin-container">
-        { loading && <Loading /> }
+      <section
+        data-testid="page-login"
+        className="bg-stone-200 min-h-screen flex items-center justify-center"
+      >
+
         { loading === false && <Redirect to="/search" /> }
-        <form className="loguin-form">
-          <div className="image-container">
-            <img
-              className="user-image"
-              alt="user"
-              src={ userImage }
-            />
-          </div>
+
+        <form className="bg-white p-10 rounded-xl shadow-lg text-center py-16 px-12 mb-10">
+
           <div className="inputs-container">
-            <label>
+
+            <h1 className="text-6xl mb-10">Sing In</h1>
+
+            <div>
               <input
-                className="loguin-input"
+                className="w-full block bg-black rounded p-2 text-white mb-3"
                 data-testid="login-name-input"
                 type="text"
-                placeholder="Nome"
+                placeholder="Name"
                 onChange={ this.handleChange }
                 value={ loguinNameInput }
                 name="loguinNameInput"
               />
-            </label>
-            <label>
+            </div>
+
+            <div>
               <input
-                className="loguin-input"
+                className="w-full block bg-black rounded p-2 text-white placeholder-center"
                 type="email"
                 placeholder="Email"
                 onChange={ this.handleChange }
                 /* value={ loguinNameInput }
                 name="loguinNameInput" */
               />
-            </label>
-            <div className="button-container">
+            </div>
+
+            <div>
               <button
-                className="loguin-button"
+                className="bg-green-400 hover:bg-green-600 p-3 w-full mt-3 rounded-lg shadow-lg"
                 data-testid="login-submit-button"
                 type="button"
                 disabled={ loguinSubmitButton }
                 name="loguinSubmitButton"
                 onClick={ this.callCreateUser }
               >
-                Entrar
+                { loading ? <Loading /> : 'Loguin' }
               </button>
             </div>
+
           </div>
+
         </form>
-      </div>
+
+      </section>
     );
   }
 }
