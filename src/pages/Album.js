@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './Header';
@@ -5,6 +6,7 @@ import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
+import '../styles/Album.css';
 
 class Album extends React.Component {
   state = {
@@ -13,6 +15,7 @@ class Album extends React.Component {
     album: '',
     loading: false,
     favoriteSongs: [],
+    albumImge: '',
   };
 
   async componentDidMount() {
@@ -25,6 +28,7 @@ class Album extends React.Component {
       artist: albumInfos.artistName,
       album: albumInfos.collectionName,
       favoriteSongs,
+      albumImge: albumInfos.artworkUrl100,
     });
   }
 
@@ -54,37 +58,52 @@ class Album extends React.Component {
       album,
       loading,
       favoriteSongs,
+      albumImge,
     } = this.state;
     return (
-      <div data-testid="page-album">
+      <div
+        data-testid="page-album"
+        className="page-album"
+      >
         <Header />
-        <div>
-          <p
-            data-testid="artist-name"
-          >
-            {artist}
-          </p>
+        <div className="main-album-container">
+          <div className="infos-container">
+            <div>
+              <img src={ albumImge } alt="album artwork" />
+            </div>
+            <div className="infos-album">
+              <div>
+                <p
+                  data-testid="artist-name"
+                >
+                  {`Artist - ${artist}`}
+                </p>
+              </div>
+              <div>
+                <p
+                  data-testid="album-name"
+                >
+                  {`Álbum - ${album}`}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="show-album-container">
+            {
+              loading === true ? <Loading />
+                : (
+                  tracks.map((track) => (
+                    <MusicCard
+                      key={ track.trackId }
+                      track={ track }
+                      fetchFavoriteSongs={ this.fetchFavoriteSongs }
+                      favoriteSongs={ favoriteSongs }
+                    />
+                  ))
+                )
+            }
+          </div>
         </div>
-        <div>
-          <p
-            data-testid="album-name"
-          >
-            {album}
-          </p>
-        </div>
-        {
-          loading === true ? <Loading />
-            : (
-              tracks.map((track) => (
-                <MusicCard
-                  key={ track.trackId }
-                  track={ track }
-                  fetchFavoriteSongs={ this.fetchFavoriteSongs }
-                  favoriteSongs={ favoriteSongs }
-                />
-              ))
-            )
-        }
       </div>
     );
   }

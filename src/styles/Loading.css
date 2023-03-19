@@ -1,0 +1,16 @@
+@import './variables.css';
+
+.loading-page {
+  background: rgb(23,24,32);
+  background: var(--gradient-background);
+  width: 100vw;
+  height: 100vh;
+  margin-left: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-page h1 {
+  color: antiquewhite;
+}

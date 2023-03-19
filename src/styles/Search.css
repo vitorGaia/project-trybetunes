@@ -1,16 +1,18 @@
+@import './variables.css';
+
 .page-search {
-  background-color: brown;
+  background: rgb(23,24,32);
+  background: var(--gradient-background);
   display: flex;
   color: antiquewhite;
 }
 
 .search-container {
   width: 100%;
-  margin-left: 220px;
+  margin-left: 260px;
 }
 
 .inputs-container form {
-  background-color: #1c0649;
   width: 100%;
   display: flex;
   height: 70px;
@@ -19,13 +21,12 @@
 }
 
 .show-search {
-  background-color: #171820;
   width: 100%;
   height: 90.8vh;
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
-  gap: 20px;
+  gap: 35px;
   align-items: center;
   justify-content: center;
 }

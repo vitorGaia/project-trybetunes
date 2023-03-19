@@ -1,4 +1,18 @@
-/* .album-card {
-  width: 100px;
-  height: 100px;
-} */
+.music-card {
+  background-color: #17182023;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  background: linear-gradient(225deg, rgba(23,24,32,0.2) 43%, rgb(5, 10, 42,0.2) 100%, rgb(17, 2, 48,0.2) 100%);
+  box-shadow:  -1px 1px 1.5px rgba(23,24,32,0.2), 1px -1px 1.5px rgba(0,10,73,0.2);
+}
+
+.player-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}

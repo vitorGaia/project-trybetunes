@@ -1,8 +1,10 @@
+@import './variables.css';
+
 .header-container {
-  background-color: #171825;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: 260px;
   height: 100vh;
   position: fixed;
   align-items: center;
