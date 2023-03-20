@@ -15,6 +15,7 @@
 .inputs-container {
   width: 100%;
   display: flex;
+  gap: 20px;
   height: 70px;
   justify-content: center;
   align-items: center;
@@ -23,8 +24,8 @@
 
 /* todo código referente ao input foi pego no aqui ('https://uiverse.io/Yaseen549/cowardly-emu-68') */
 .inputs-container input {
-  color: #8707ff;
-  border: 1px solid #8707ff;
+  color: #45067f;
+  border: 1px solid #480685;
   border-radius: 10px;
   padding: 6px 25px;
   background: transparent;
@@ -42,7 +43,7 @@
   outline: none;
   border: 1px solid #303030;
   background: #212121;
-  color: #ae00ff;
+  color: antiquewhite;
   letter-spacing: 1px;
   font-size: 15px;
   overflow: hidden;
@@ -53,7 +54,7 @@
  }
  
  .inputs-container button:hover {
-  box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+  box-shadow: 0 0 5px #ae00ff, 0 0 10px #001eff, 0 0 20px #ae00ff;
   transition-delay: 0.6s;
  }
  

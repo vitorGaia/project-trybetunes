@@ -25,7 +25,7 @@ class MusicCard extends React.Component {
               audio
             </code>
           </audio>
-          <label>
+          <label className="switch">
             <input
               data-testid={ `checkbox-music-${track.trackId}` }
               type="checkbox"
@@ -33,6 +33,7 @@ class MusicCard extends React.Component {
               checked={ favoriteSongs
                 .some((song) => song.trackId === track.trackId) }
             />
+            <span className="slider" />
           </label>
         </div>
       </div>

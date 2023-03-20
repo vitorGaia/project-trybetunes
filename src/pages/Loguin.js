@@ -42,8 +42,11 @@ class Loguin extends React.Component {
     } = this.state;
     return (
       <div data-testid="page-login" className="loguin-container">
+
         { loading === false && <Redirect to="/search" /> }
+
         <form className="loguin-form">
+
           <div className="image-container">
             <img
               className="user-image"
@@ -51,7 +54,9 @@ class Loguin extends React.Component {
               src={ userImage }
             />
           </div>
-          <div className="inputs-container">
+
+          <div className="inputs-loguin-container">
+
             <label>
               <input
                 className="loguin-input"
@@ -63,6 +68,7 @@ class Loguin extends React.Component {
                 name="loguinNameInput"
               />
             </label>
+
             <label>
               <input
                 className="loguin-input"
@@ -73,6 +79,7 @@ class Loguin extends React.Component {
                 name="loguinNameInput" */
               />
             </label>
+
             <div className="button-container">
               <button
                 className="loguin-button"
@@ -85,8 +92,11 @@ class Loguin extends React.Component {
                 { loading ? 'Carregando...' : 'Entrar' }
               </button>
             </div>
+
           </div>
+
         </form>
+
       </div>
     );
   }
