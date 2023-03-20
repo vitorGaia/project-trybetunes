@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
-import Loading from './Loading';
 import '../styles/Loguin.css';
 import userImage from '../images/userImage2.jpg';
 
@@ -43,7 +42,6 @@ class Loguin extends React.Component {
     } = this.state;
     return (
       <div data-testid="page-login" className="loguin-container">
-        { loading && <Loading /> }
         { loading === false && <Redirect to="/search" /> }
         <form className="loguin-form">
           <div className="image-container">
@@ -84,7 +82,7 @@ class Loguin extends React.Component {
                 name="loguinSubmitButton"
                 onClick={ this.callCreateUser }
               >
-                Entrar
+                { loading ? 'Carregando...' : 'Entrar' }
               </button>
             </div>
           </div>

@@ -56,32 +56,39 @@ class Search extends React.Component {
     } = this.state;
     return (
       <div data-testid="page-search" className="page-search">
+
         <Header />
+
         { loading === true ? <Loading />
           : (
             <div className="search-container">
+
               <div className="inputs-container">
-                <form>
-                  <div>
-                    <input
-                      data-testid="search-artist-input"
-                      type="text"
-                      placeholder="Pesquisar"
-                      name="searchArtistInput"
-                      onChange={ this.handleChange }
-                    />
-                  </div>
-                  <div>
-                    <button
-                      data-testid="search-artist-button"
-                      disabled={ searchArtistButton }
-                      onClick={ this.fetchAPI }
-                    >
-                      Pesquisar
-                    </button>
-                  </div>
-                </form>
+                <div>
+                  <input
+                    data-testid="search-artist-input"
+                    type="text"
+                    placeholder="Pesquisar"
+                    name="searchArtistInput"
+                    onChange={ this.handleChange }
+                  />
+                </div>
+
+                <div>
+                  <button
+                    data-testid="search-artist-button"
+                    disabled={ searchArtistButton }
+                    onClick={ this.fetchAPI }
+                  >
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    Pesquisar
+                  </button>
+                </div>
               </div>
+
               <div className="show-search">
                 {
                   fetchAlbunsIsOk === false
@@ -109,8 +116,10 @@ class Search extends React.Component {
                   ))
                 }
               </div>
+
             </div>
           ) }
+
       </div>
     );
   }
