@@ -35,10 +35,15 @@ class MusicCard extends React.Component {
 
     return (
       <div className="music-card">
+
         <div className="card-music-box-image">
           <img src={ albumImge } alt="art work" />
         </div>
-        <p>{ track.trackName }</p>
+
+        <div className="track-namebox">
+          <p>{ track.trackName }</p>
+        </div>
+
         <div className="player-container">
           <audio
             data-testid="audio-component"
@@ -63,6 +68,7 @@ class MusicCard extends React.Component {
             <span className="slider" />
           </label>
         </div>
+
       </div>
     );
   }

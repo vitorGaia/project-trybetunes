@@ -7,11 +7,13 @@
   height: 100vh;
   width: 100vw;
   background: var(--gradient-background);
+  position: fixed;
 }
 
 .show-favorites {
-  padding-top: 64px;
-  background-color: aqua;
+  height: 100%;
+  width: 100%;
+  padding-top: 40px;
   padding-bottom: 40px;
   position: absolute;
   top: 64px;
@@ -24,6 +26,5 @@
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  overflow: auto;
   color: var(--fonts-color-gray);
 }
