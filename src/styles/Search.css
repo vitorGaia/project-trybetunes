@@ -1,7 +1,7 @@
 @import './variables.css';
 
 .page-search {
-  background: linear-gradient(7deg, rgba(0,0,0,1) 46%, rgba(20,20,10,1) 77%, rgba(14,37,34,1) 89%, rgba(3,53,60,1) 96%);
+  background: linear-gradient(7deg, rgba(0,0,0,1) 1%, rgba(27,10,4,1) 8%, rgba(33,4,4,1) 14%, rgba(36,11,0,1) 21%, rgba(0,0,0,1) 46%, rgba(20,20,10,1) 77%, rgba(14,37,34,1) 89%, rgba(3,53,60,1) 96%);
   height: 100vh;
   width: 100vw;
 }
@@ -85,7 +85,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  /* overflow: auto; */
   gap: 40px;
   justify-content: center;
   align-items: center;

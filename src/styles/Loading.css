@@ -5,12 +5,11 @@
   background: var(--gradient-background);
   width: 100vw;
   height: 100vh;
-  margin-left: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .loading-page h1 {
-  color: antiquewhite;
+  color: var(--fonts-color-gray);
 }

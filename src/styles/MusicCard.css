@@ -8,8 +8,7 @@
   justify-content: space-between;
   padding: 10px;
   border-radius: 5px;
-  /* background: linear-gradient(225deg, rgba(23,24,32,0.2) 43%, rgb(5, 10, 42,0.2) 100%, rgb(17, 2, 48,0.2) 100%); */
-  background-color: #0b040e54;
+  background-color: #040c0a4d;
   box-shadow:  -1px 1px 1.5px rgba(23,24,32,0.2), 1px -1px 1.5px rgba(0,10,73,0.2);
 }
 
@@ -18,6 +17,22 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
+}
+
+.card-music-box-image {
+  height: 100%;
+  width: 70px;
+  background-image: linear-gradient(163deg, #00aaff 0%, #cc2d2d 100%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-music-box-image img {
+  height: 95%;
+  width: 95%;
+  border-radius: 5px;
 }
 
 /* The switch - the box around the slider */

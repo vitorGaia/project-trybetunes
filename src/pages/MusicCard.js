@@ -3,15 +3,41 @@ import PropTypes from 'prop-types';
 import '../styles/MusicCard.css';
 
 class MusicCard extends React.Component {
+  state = {
+    isFavorite: false,
+  };
+
+  componentDidMount() {
+    this.handleFavorites();
+  }
+
+  handleFavorites = async () => {
+    const { favoriteSongs, track: { trackId } } = this.props;
+    favoriteSongs
+      .forEach((song) => (song.trackId === trackId && this
+        .setState({ isFavorite: true })));
+  };
+
+  handleChange = async ({ target }) => {
+    const { track, fetchFavoriteSongs } = this.props;
+    this.setState({
+      isFavorite: target.type === 'checkbox' ? target.checked : target.value,
+    }, await fetchFavoriteSongs(track, target));
+  };
+
   render() {
     const {
-      fetchFavoriteSongs,
-      favoriteSongs,
       track,
-      loading,
+      albumImge,
     } = this.props;
+
+    const { isFavorite } = this.state;
+
     return (
       <div className="music-card">
+        <div className="card-music-box-image">
+          <img src={ albumImge } alt="art work" />
+        </div>
         <p>{ track.trackName }</p>
         <div className="player-container">
           <audio
@@ -26,19 +52,16 @@ class MusicCard extends React.Component {
               audio
             </code>
           </audio>
-          { loading === true ? <p>Carregando...</p>
-            : (
-              <label className="switch">
-                <input
-                  data-testid={ `checkbox-music-${track.trackId}` }
-                  type="checkbox"
-                  onChange={ async (event) => fetchFavoriteSongs(track, event) }
-                  checked={ favoriteSongs
-                    .some((song) => song.trackId === track.trackId) }
-                />
-                <span className="slider" />
-              </label>
-            ) }
+          <label className="switch">
+            <input
+              data-testid={ `checkbox-music-${track.trackId}` }
+              type="checkbox"
+              onChange={ this.handleChange }
+              name={ track.trackId }
+              checked={ isFavorite }
+            />
+            <span className="slider" />
+          </label>
         </div>
       </div>
     );
@@ -49,7 +72,7 @@ MusicCard.propTypes = {
   track: PropTypes.shape(PropTypes.string.isRequired).isRequired,
   fetchFavoriteSongs: PropTypes.func.isRequired,
   favoriteSongs: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  loading: PropTypes.bool.isRequired,
+  albumImge: PropTypes.string.isRequired,
 };
 
 export default MusicCard;

@@ -32,7 +32,7 @@ class Album extends React.Component {
     });
   }
 
-  fetchFavoriteSongs = async (track, { target }) => {
+  fetchFavoriteSongs = async (track, target) => {
     if (target.checked) {
       this.setState({ loading: true });
       await addSong(track);
@@ -40,8 +40,7 @@ class Album extends React.Component {
         favoriteSongs: [track, ...prevState.favoriteSongs],
         loading: false,
       }));
-    }
-    if (!target.checked) {
+    } else {
       this.setState({ loading: true });
       await removeSong(track);
       this.setState(({
@@ -66,11 +65,15 @@ class Album extends React.Component {
         className="page-album"
       >
         <Header />
+
         <div className="main-album-container">
+
           <div className="infos-container">
-            <div>
+
+            <div className="imagebox">
               <img src={ albumImge } alt="album artwork" />
             </div>
+
             <div className="infos-album">
               <div>
                 <p
@@ -87,7 +90,13 @@ class Album extends React.Component {
                 </p>
               </div>
             </div>
+
+            <div>
+              { loading === true && <p>Carregando...</p> }
+            </div>
+
           </div>
+
           <div className="show-album-container">
             {
               tracks.map((track) => (
@@ -96,7 +105,7 @@ class Album extends React.Component {
                   track={ track }
                   fetchFavoriteSongs={ this.fetchFavoriteSongs }
                   favoriteSongs={ favoriteSongs }
-                  loading={ loading }
+                  albumImge={ albumImge }
                 />
               ))
             }

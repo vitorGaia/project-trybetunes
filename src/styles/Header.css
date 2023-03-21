@@ -9,7 +9,7 @@
   height: 64px;
   width: 100%;
   padding: 8px;
-  color: rgb(187, 186, 185);
+  color: var(--fonts-color-gray);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -35,6 +35,7 @@
 
 .user-name-container {
   padding-right: 20px;
+  color: var(--fonts-color-gray);
 }
 
 /* .header-container {
