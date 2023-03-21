@@ -5,7 +5,7 @@ import Header from './Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
-import Loading from './Loading';
+/* import Loading from './Loading'; */
 import '../styles/Album.css';
 
 class Album extends React.Component {
@@ -90,17 +90,15 @@ class Album extends React.Component {
           </div>
           <div className="show-album-container">
             {
-              loading === true ? <Loading />
-                : (
-                  tracks.map((track) => (
-                    <MusicCard
-                      key={ track.trackId }
-                      track={ track }
-                      fetchFavoriteSongs={ this.fetchFavoriteSongs }
-                      favoriteSongs={ favoriteSongs }
-                    />
-                  ))
-                )
+              tracks.map((track) => (
+                <MusicCard
+                  key={ track.trackId }
+                  track={ track }
+                  fetchFavoriteSongs={ this.fetchFavoriteSongs }
+                  favoriteSongs={ favoriteSongs }
+                  loading={ loading }
+                />
+              ))
             }
           </div>
         </div>

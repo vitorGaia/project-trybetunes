@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from './Header';
-import Loading from './Loading';
+/* import Loading from './Loading'; */
 import CardAlbum from './CardAlbum';
 import '../styles/Search.css';
 
@@ -59,66 +60,62 @@ class Search extends React.Component {
 
         <Header />
 
-        { loading === true ? <Loading />
-          : (
-            <div className="search-container">
+        <div className="search-container">
 
-              <div className="inputs-container">
-                <div>
-                  <input
-                    data-testid="search-artist-input"
-                    type="text"
-                    placeholder="Pesquisar"
-                    name="searchArtistInput"
-                    onChange={ this.handleChange }
-                  />
-                </div>
-
-                <div>
-                  <button
-                    data-testid="search-artist-button"
-                    disabled={ searchArtistButton }
-                    onClick={ this.fetchAPI }
-                  >
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    Pesquisar
-                  </button>
-                </div>
-              </div>
-
-              <div className="show-search">
-                {
-                  fetchAlbunsIsOk === false
-                  && <p>Nenhum álbum foi encontrado</p>
-                }
-                {
-                  albuns.length !== 0
-                  && (
-                    <div className="albuns-result">
-                      <p>
-                        { `Resultado de álbuns de: ${searchArtistInput}` }
-                      </p>
-                    </div>
-                  )
-                }
-                {
-                  albuns.map((album) => (
-                    <CardAlbum
-                      key={ album.collectionId }
-                      artworkUrl100={ album.artworkUrl100 }
-                      collectionName={ album.collectionName }
-                      artistName={ album.artistName }
-                      collectionId={ album.collectionId }
-                    />
-                  ))
-                }
-              </div>
-
+          <div className="inputs-container">
+            <div className="inputbox">
+              <input
+                required=""
+                data-testid="search-artist-input"
+                type="text"
+                placeholder="Pesquisar"
+                name="searchArtistInput"
+                onChange={ this.handleChange }
+              />
             </div>
-          ) }
+
+            <div className="btnbox">
+              <button
+                data-testid="search-artist-button"
+                disabled={ searchArtistButton }
+                onClick={ this.fetchAPI }
+              >
+                <span />
+                { loading === true ? 'Carregando...' : 'Pesquisar' }
+              </button>
+            </div>
+          </div>
+
+          {
+            albuns.length !== 0
+            && (
+              <div className="albuns-result">
+                <p>
+                  { `Resultado de álbuns de: ${searchArtistInput}` }
+                </p>
+              </div>
+            )
+          }
+
+          <div className="show-search">
+            {
+              fetchAlbunsIsOk === false
+              && <p>Nenhum álbum foi encontrado</p>
+            }
+            {
+              albuns.map((album) => (
+                <CardAlbum
+                  key={ album.collectionId }
+                  artworkUrl100={ album.artworkUrl100 }
+                  collectionName={ album.collectionName }
+                  artistName={ album.artistName }
+                  collectionId={ album.collectionId }
+                />
+              ))
+            }
+          </div>
+
+        </div>
 
       </div>
     );

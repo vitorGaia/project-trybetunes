@@ -1,6 +1,97 @@
 @import './variables.css';
 
 .page-search {
+  background: linear-gradient(7deg, rgba(0,0,0,1) 46%, rgba(20,20,10,1) 77%, rgba(14,37,34,1) 89%, rgba(3,53,60,1) 96%);
+  height: 100vh;
+  width: 100vw;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.search-container .inputs-container {
+  height: 54px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* O código referente ao input foi pego aqui ('https://uiverse.io/sonusng/lovely-bulldog-50') */
+.inputbox input {
+  width: 310px;
+  height: 40px;
+  padding: 0 16px;
+  background: transparent;
+  border-radius: 500px;
+  border: 1px solid #058385;
+  color: #f9f9f9;
+  /* animation: shake_541 0.14s 3; */
+}
+
+.inputbox input::placeholder {
+  color: rgb(187, 186, 185);
+}
+
+.inputbox input:hover{
+  border-color: #45feaf;
+  animation: none;
+}
+
+.btnbox button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 11px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 500px;
+  background: transparent;
+  color: rgb(187, 186, 185);
+}
+
+.btnbox button:hover {
+  color: #1e8d8f;
+}
+
+.search-container .albuns-result {
+  display: flex;
+  padding-top: 25px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: rgb(187, 186, 185);
+  font-size: large;
+}
+
+.show-search {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 130px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* overflow: auto; */
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .page-search {
   background: rgb(23,24,32);
   background: var(--gradient-background);
   display: flex;
@@ -20,10 +111,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
+} */
 
 /* todo código referente ao input foi pego no aqui ('https://uiverse.io/Yaseen549/cowardly-emu-68') */
-.inputs-container input {
+/* .inputs-container input {
   color: #45067f;
   border: 1px solid #480685;
   border-radius: 10px;
@@ -34,10 +125,10 @@
  
 .inputs-container input:active {
   box-shadow: 2px 2px 15px #8707ff inset;
-}
+} */
 
 /* todo código referente ao botão foi pego no aqui ('https://uiverse.io/menezes11/afraid-lizard-67') */
-.inputs-container button {
+/* .inputs-container button {
   position: relative;
   padding: 9px;
   outline: none;
@@ -145,10 +236,9 @@
 }
 
 .albuns-result {
-  /* background-color: blueviolet; */
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */

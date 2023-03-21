@@ -8,6 +8,7 @@ class MusicCard extends React.Component {
       fetchFavoriteSongs,
       favoriteSongs,
       track,
+      loading,
     } = this.props;
     return (
       <div className="music-card">
@@ -25,16 +26,19 @@ class MusicCard extends React.Component {
               audio
             </code>
           </audio>
-          <label className="switch">
-            <input
-              data-testid={ `checkbox-music-${track.trackId}` }
-              type="checkbox"
-              onChange={ async (event) => fetchFavoriteSongs(track, event) }
-              checked={ favoriteSongs
-                .some((song) => song.trackId === track.trackId) }
-            />
-            <span className="slider" />
-          </label>
+          { loading === true ? <p>Carregando...</p>
+            : (
+              <label className="switch">
+                <input
+                  data-testid={ `checkbox-music-${track.trackId}` }
+                  type="checkbox"
+                  onChange={ async (event) => fetchFavoriteSongs(track, event) }
+                  checked={ favoriteSongs
+                    .some((song) => song.trackId === track.trackId) }
+                />
+                <span className="slider" />
+              </label>
+            ) }
         </div>
       </div>
     );
@@ -45,6 +49,7 @@ MusicCard.propTypes = {
   track: PropTypes.shape(PropTypes.string.isRequired).isRequired,
   fetchFavoriteSongs: PropTypes.func.isRequired,
   favoriteSongs: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default MusicCard;
