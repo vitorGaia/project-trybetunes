@@ -2,7 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import '../styles/Loguin.css';
-import logo from '../images/logo.png';
+import logo from '../images/logo.svg';
+import Loading from './Loading';
 
 class Loguin extends React.Component {
   state = {
@@ -45,56 +46,59 @@ class Loguin extends React.Component {
 
         { loading === false && <Redirect to="/search" /> }
 
-        <form className="loguin-card-form">
+        {loading === true ? <Loading />
+          : (
+            <form className="loguin-card-form">
 
-          <div className="image-container">
-            <img
-              className="user-image"
-              alt="user"
-              src={ logo }
-            />
-          </div>
+              <div className="image-container">
+                <img
+                  className="user-image"
+                  alt="user"
+                  src={ logo }
+                />
+              </div>
 
-          <div className="inputs-loguin-container">
-            <h3>Faça Login</h3>
+              <div className="inputs-loguin-container">
+                <h3>Faça Login</h3>
 
-            <label>
-              <input
-                className="loguin-input"
-                data-testid="login-name-input"
-                type="text"
-                placeholder="Nome"
-                onChange={ this.handleChange }
-                value={ loguinNameInput }
-                name="loguinNameInput"
-              />
-            </label>
+                <label>
+                  <input
+                    className="loguin-input"
+                    data-testid="login-name-input"
+                    type="text"
+                    placeholder="Nome"
+                    onChange={ this.handleChange }
+                    value={ loguinNameInput }
+                    name="loguinNameInput"
+                  />
+                </label>
 
-            <label>
-              <input
-                className="loguin-input"
-                type="email"
-                placeholder="Email"
-                onChange={ this.handleChange }
-                /* value={ loguinNameInput }
+                <label>
+                  <input
+                    className="loguin-input"
+                    type="email"
+                    placeholder="Email"
+                    onChange={ this.handleChange }
+                    /* value={ loguinNameInput }
                 name="loguinNameInput" */
-              />
-            </label>
+                  />
+                </label>
 
-            <button
-              className="loguin-button"
-              data-testid="login-submit-button"
-              type="button"
-              disabled={ loguinSubmitButton }
-              name="loguinSubmitButton"
-              onClick={ this.callCreateUser }
-            >
-              { loading ? 'Carregando...' : 'Entrar' }
-            </button>
+                <button
+                  className="loguin-button"
+                  data-testid="login-submit-button"
+                  type="button"
+                  disabled={ loguinSubmitButton }
+                  name="loguinSubmitButton"
+                  onClick={ this.callCreateUser }
+                >
+                  Entrar
+                </button>
 
-          </div>
+              </div>
 
-        </form>
+            </form>
+          )}
 
       </div>
     );

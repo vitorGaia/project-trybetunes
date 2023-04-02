@@ -2,7 +2,7 @@
 import React from 'react';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from './Header';
-/* import Loading from './Loading'; */
+import Loading from './Loading';
 import CardAlbum from './CardAlbum';
 import '../styles/Search.css';
 
@@ -10,7 +10,7 @@ class Search extends React.Component {
   state = {
     searchArtistInput: '',
     searchArtistButton: true,
-    loading: undefined,
+    loading: false,
     albuns: [],
     fetchAlbunsIsOk: undefined,
   };
@@ -80,7 +80,7 @@ class Search extends React.Component {
                 onClick={ this.fetchAPI }
               >
                 <span />
-                { loading === true ? 'Carregando...' : 'Pesquisar' }
+                Pesquisar
               </button>
             </div>
           </div>
@@ -101,23 +101,26 @@ class Search extends React.Component {
             )
           }
 
-          <div className="show-search">
-            {
-              fetchAlbunsIsOk === false
+          {loading === true ? <Loading />
+            : (
+              <div className="show-search">
+                {
+                  fetchAlbunsIsOk === false
               && <p>Nenhum álbum foi encontrado</p>
-            }
-            {
-              albuns.map((album) => (
-                <CardAlbum
-                  key={ album.collectionId }
-                  artworkUrl100={ album.artworkUrl100 }
-                  collectionName={ album.collectionName }
-                  artistName={ album.artistName }
-                  collectionId={ album.collectionId }
-                />
-              ))
-            }
-          </div>
+                }
+                {
+                  albuns.map((album) => (
+                    <CardAlbum
+                      key={ album.collectionId }
+                      artworkUrl100={ album.artworkUrl100 }
+                      collectionName={ album.collectionName }
+                      artistName={ album.artistName }
+                      collectionId={ album.collectionId }
+                    />
+                  ))
+                }
+              </div>
+            )}
 
         </div>
 

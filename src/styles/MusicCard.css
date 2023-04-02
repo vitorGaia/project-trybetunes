@@ -5,18 +5,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3px;
+  padding: 5px;
   height: 70px;
-  /* max-height: 70px; */
   border-radius: 5px;
-  /* background-color: #040c0a4d; */
-  background-color: #e4d6f309;
-  box-shadow:  -1px 1px 1.5px rgba(23,24,32,0.2), 1px -1px 1.5px rgba(0,10,73,0.2);
 }
 
 .music-card:hover {
   transform: scale(1.01);
-  box-shadow: 0px 0px 5px 1px rgba(10, 117, 136, 0.3);
+  box-shadow: 0px 0px 5px 1px rgba(23, 142, 140, 0.441);
 }
 
 .player-container {
@@ -29,7 +25,7 @@
 .card-music-box-image {
   height: 100%;
   width: 60px;
-  background-image: linear-gradient(29deg, rgba(9,104,106,1) 0%, rgba(70,6,42,1) 100%);
+  background-image: linear-gradient(120deg,#234567,#781223);
   border-radius: 5px;
   display: flex;
   justify-content: center;

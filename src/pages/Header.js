@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import '../styles/Header.css';
-import logo from '../images/logo.png';
-/* import searchIcon from '../images/searchIcon.png';
-import favoritesIcon from '../images/favoritesIcon.png';
-import profileIcon from '../images/profileIcon.png'; */
-
+import logo from '../images/logo.svg';
+/* import searchIcon from '../images/Vector.svg';
+import favoritesIcon from '../images/🦆 icon _star empty_.svg';
+import profileIcon from '../images/🦆 icon _profile_.png';
+ */
 class Header extends React.Component {
   state = {
     name: 'Carregando...',

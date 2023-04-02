@@ -41,7 +41,7 @@ class MusicCard extends React.Component {
         </div>
 
         <div className="track-namebox">
-          <p>{ track.trackName }</p>
+          <p>{ `${track.artistName} - ${track.trackName}` }</p>
         </div>
 
         <div className="player-container">

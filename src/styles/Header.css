@@ -34,7 +34,7 @@
 }
 
 .header-container .links-container .nav-links:hover {
-  color: #45feaf;
+  color: var(--accent-blue2);
   transform: scale(1.02);
 }
 
@@ -42,47 +42,3 @@
   padding-right: 20px;
   color: var(--fonts-color-gray);
 }
-
-/* .header-container {
-  background-color: var(--main-color);
-  display: flex;
-  flex-direction: column;
-  width: 260px;
-  height: 100vh;
-  position: fixed;
-  align-items: center;
-}
-
-.logo-container {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.user-name-container {
-  margin-top: 25px;
-  position: absolute;
-  bottom: 40px;
-}
-
-.links-container {
-  height: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-}
-
-.nav-links-container {
-  width: 55%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-links {
-  text-decoration: none;
-  color: aliceblue;
-} */

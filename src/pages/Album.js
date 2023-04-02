@@ -83,16 +83,15 @@ class Album extends React.Component {
                 </p>
               </div>
               <div>
-                <p
-                  data-testid="album-name"
-                >
-                  {`Álbum - ${album}`}
-                </p>
+                { loading === true ? <p>Carregando...</p>
+                  : (
+                    <p
+                      data-testid="album-name"
+                    >
+                      {`Álbum - ${album}`}
+                    </p>
+                  ) }
               </div>
-            </div>
-
-            <div>
-              { loading === true && <p>Carregando...</p> }
             </div>
 
           </div>
