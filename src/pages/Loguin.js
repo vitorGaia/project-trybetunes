@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import '../styles/Loguin.css';
-import userImage from '../images/userImage2.jpg';
+import logo from '../images/logo.png';
 
 class Loguin extends React.Component {
   state = {
@@ -41,21 +41,22 @@ class Loguin extends React.Component {
       loading,
     } = this.state;
     return (
-      <div data-testid="page-login" className="loguin-container">
+      <div data-testid="page-login" className="loguin-page-container">
 
         { loading === false && <Redirect to="/search" /> }
 
-        <form className="loguin-form">
+        <form className="loguin-card-form">
 
           <div className="image-container">
             <img
               className="user-image"
               alt="user"
-              src={ userImage }
+              src={ logo }
             />
           </div>
 
           <div className="inputs-loguin-container">
+            <h3>Faça Login</h3>
 
             <label>
               <input
@@ -80,18 +81,16 @@ class Loguin extends React.Component {
               />
             </label>
 
-            <div className="button-container">
-              <button
-                className="loguin-button"
-                data-testid="login-submit-button"
-                type="button"
-                disabled={ loguinSubmitButton }
-                name="loguinSubmitButton"
-                onClick={ this.callCreateUser }
-              >
-                { loading ? 'Carregando...' : 'Entrar' }
-              </button>
-            </div>
+            <button
+              className="loguin-button"
+              data-testid="login-submit-button"
+              type="button"
+              disabled={ loguinSubmitButton }
+              name="loguinSubmitButton"
+              onClick={ this.callCreateUser }
+            >
+              { loading ? 'Carregando...' : 'Entrar' }
+            </button>
 
           </div>
 

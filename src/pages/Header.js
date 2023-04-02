@@ -29,7 +29,11 @@ class Header extends React.Component {
       <header className="header-container" data-testid="header-component">
 
         <div className="logo-container">
-          <img src={ logo } alt="logo trybe tunes" />
+          <Link
+            to="/search"
+          >
+            <img src={ logo } alt="logo trybe tunes" />
+          </Link>
         </div>
 
         <div className="links-container">

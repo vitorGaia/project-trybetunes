@@ -1,8 +1,7 @@
 @import './variables.css';
 
 .loading-page {
-  background: rgb(23,24,32);
-  background: var(--gradient-background);
+  background: #171820;
   width: 100vw;
   height: 100vh;
   display: flex;

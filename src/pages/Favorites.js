@@ -35,10 +35,11 @@ class Favorites extends React.Component {
     return (
       <div data-testid="page-favorites" className="page-favorites">
         <Header />
-        <div>
-          { loading === true && <Loading /> }
-        </div>
+
         <div className="show-favorites">
+          {
+            favoriteSongs.length === 0 && <h3>Sem músicas favoritadas</h3>
+          }
           {
             favoriteSongs.map((song) => (
               <MusicCard
@@ -46,7 +47,7 @@ class Favorites extends React.Component {
                 favoriteSongs={ favoriteSongs }
                 track={ song }
                 fetchFavoriteSongs={ () => this.removeFavorites(song) }
-                albumImge="https://scontent.fbel5-1.fna.fbcdn.net/v/t39.30808-6/271530178_581156813234795_944851720090249034_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=mAeWh8L7wawAX9buHXT&_nc_ht=scontent.fbel5-1.fna&oh=00_AfDf2Ct6lUMsCcnv32XB_9acwJg8DvnASiypdXlDo0g3Pw&oe=641E1F80"
+                albumImge="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlMqzAiSPX76b04lnt0ziecKRHnFJokxZvhzHofyIcgK5kGCqJv2oso1Alm5tejbQEsmY&usqp=CAU"
               />))
           }
         </div>

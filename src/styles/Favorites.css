@@ -6,8 +6,11 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: var(--gradient-background);
   position: fixed;
+  background-color: #171820;
+/*   background: linear-gradient(189deg, rgb(47, 5, 110), #171820, #0c152f, #169fa1);
+  background-size: 300% 300%;
+  animation: colors 15s ease infinite; */
 }
 
 .show-favorites {

@@ -1,9 +1,11 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import { getUser } from '../services/userAPI';
-import Loading from './Loguin';
+import Loading from './Loading';
 import '../styles/Profile.css';
+import userImage from '../images/userImage2.jpg';
 
 class Profile extends React.Component {
   state = {
@@ -36,34 +38,45 @@ class Profile extends React.Component {
 
         <Header />
 
-        <div className="profile-container">
-          {
-            loading === true ? <Loading />
-              : (
-                <div className="profile-content">
-                  <div>
-                    <img
-                      data-testid="profile-image"
-                      alt={ name || 'userImage' }
-                      src={ image || 'userImage' }
-                    />
-                  </div>
-                  <div>
-                    <p>{ name }</p>
-                    <p>{ email || 'user@email' }</p>
-                    <p>{ description || 'userDescription' }</p>
-                  </div>
+        {
+          loading ? <Loading /> : (
+            <div className="profile-container">
+
+              <div className="profile-content">
+
+                <div className="profile-imagebox">
+                  <img
+                    className="profile-image"
+                    data-testid="profile-image"
+                    alt={ name || 'userImage' }
+                    src={ image || userImage }
+                  />
                 </div>
-              )
-          }
 
-          <Link
-            to="/profile/edit"
-          >
-            Editar perfil
-          </Link>
+              </div>
 
-        </div>
+              <div className="edit-profile-container-link">
+
+                <div className="profile-edit-link">
+                  <Link
+                    to="/profile/edit"
+                    className="link-edit"
+                  >
+                    Editar perfil
+                  </Link>
+                </div>
+
+                <div className="profile-infos-box">
+                  <p>{ name }</p>
+                  <p>{ email || 'user@email' }</p>
+                  <p>{ description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu volutpat elit. Vivamus mattis nulla vel accumsan facilisis. Aenean sollicitudin finibus euismod. Proin pharetra lobortis tellus eleifend blandit. Pellentesque scelerisque aliquam mi nec maximus. Donec fermentum eget libero vel ornare. Praesent blandit imperdiet auctor. Duis tincidunt libero justo, a consectetur arcu fermentum molestie. Quisque congue iaculis tellus eu imperdiet. Mauris arcu justo, elementum eu ante vel, dignissim gravida ante.' }</p>
+                </div>
+
+              </div>
+
+            </div>
+          )
+        }
 
       </div>
     );

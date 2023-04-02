@@ -33,6 +33,11 @@
   color: inherit;
 }
 
+.header-container .links-container .nav-links:hover {
+  color: #45feaf;
+  transform: scale(1.02);
+}
+
 .user-name-container {
   padding-right: 20px;
   color: var(--fonts-color-gray);

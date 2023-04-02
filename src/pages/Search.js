@@ -68,7 +68,6 @@ class Search extends React.Component {
                 required=""
                 data-testid="search-artist-input"
                 type="text"
-                placeholder="Pesquisar"
                 name="searchArtistInput"
                 onChange={ this.handleChange }
               />
@@ -87,8 +86,13 @@ class Search extends React.Component {
           </div>
 
           {
-            albuns.length !== 0
-            && (
+            albuns.length === 0 ? (
+              <div className="albuns-result">
+                <p>
+                  Você ainda não pesquisou nada, busque um artista ou álbum!
+                </p>
+              </div>
+            ) : (
               <div className="albuns-result">
                 <p>
                   { `Resultado de álbuns de: ${searchArtistInput}` }

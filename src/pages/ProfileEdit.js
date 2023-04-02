@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import { getUser, updateUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../styles/ProfileEdit.css';
 
 class ProfileEdit extends React.Component {
   state = {
@@ -77,71 +78,71 @@ class ProfileEdit extends React.Component {
       disableBtn,
     } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div data-testid="page-profile-edit" className="page-profile-edit">
+
         <Header />
+
         {
           loading === true ? <Loading />
             : (
-              <div>
-                <form>
-                  <div>
-                    <label>
-                      Nome:
-                      <input
-                        value={ name }
-                        data-testid="edit-input-name"
-                        onChange={ this.handleChange }
-                        name="name"
-                        type="text"
-                      />
-                    </label>
-                  </div>
-                  <div>
-                    <label>
-                      Email:
-                      <input
-                        value={ email }
-                        data-testid="edit-input-email"
-                        onChange={ this.handleChange }
-                        name="email"
-                        type="email"
-                      />
-                    </label>
-                  </div>
-                  <div>
-                    <label>
-                      Descrição:
-                      <input
-                        value={ description }
-                        data-testid="edit-input-description"
-                        onChange={ this.handleChange }
-                        name="description"
-                        type="text"
-                      />
-                    </label>
-                  </div>
-                  <div>
-                    <label>
-                      Foto de perfil:
-                      <input
-                        value={ image }
-                        data-testid="edit-input-image"
-                        onChange={ this.handleChange }
-                        name="image"
-                        type="text"
-                      />
-                    </label>
-                  </div>
-                  <div>
-                    <button
-                      data-testid="edit-button-save"
-                      disabled={ disableBtn }
-                      onClick={ this.setNewUserProfile }
-                    >
-                      Editar perfil
-                    </button>
-                  </div>
+              <div className="profile-edit-content">
+
+                <form className="profile-edit-form">
+
+                  <label>
+                    Nome:
+                    <input
+                      value={ name }
+                      data-testid="edit-input-name"
+                      onChange={ this.handleChange }
+                      name="name"
+                      type="text"
+                    />
+                  </label>
+
+                  <label>
+                    Email:
+                    <input
+                      value={ email }
+                      data-testid="edit-input-email"
+                      onChange={ this.handleChange }
+                      name="email"
+                      type="email"
+                    />
+                  </label>
+
+                  <label>
+                    Descrição:
+                    <input
+                      value={ description }
+                      data-testid="edit-input-description"
+                      onChange={ this.handleChange }
+                      name="description"
+                      type="text"
+                    />
+                  </label>
+
+                  <label>
+                    Foto de perfil:
+                    <input
+                      value={ image }
+                      data-testid="edit-input-image"
+                      onChange={ this.handleChange }
+                      name="image"
+                      type="text"
+                    />
+                  </label>
+
+                  <button
+                    data-testid="edit-button-save"
+                    disabled={ disableBtn }
+                    onClick={ this.setNewUserProfile }
+                  >
+                    Salvar Perfil
+                  </button>
+
                 </form>
+
               </div>
             )
         }
