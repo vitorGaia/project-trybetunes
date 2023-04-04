@@ -101,7 +101,7 @@ class Search extends React.Component {
             )
           }
 
-          {loading === true ? <Loading />
+          {loading === true || albuns.length === 0 ? <Loading />
             : (
               <div className="show-search">
                 {

@@ -98,3 +98,33 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 576px) {
+  .search-container {
+    top: 0;
+    bottom: 64px;
+  }
+
+  .search-container .inputs-container {
+    height: 64px;
+    padding-top: 7px;
+  }
+
+  .inputbox input {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .search-container .albuns-result {
+    padding-top: 0;
+    padding: 7px;
+    text-align: center;
+  }
+
+  .show-search {
+    top: 108px;
+    padding: 15px;
+    gap: 10px;
+    overflow: auto;
+  }
+}

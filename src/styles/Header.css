@@ -42,3 +42,37 @@
   padding-right: 20px;
   color: var(--fonts-color-gray);
 }
+
+@media screen and (max-width: 576px) {
+  .header-container {
+    left: 0;
+    right: unset;
+    top: unset;
+    bottom: 0;
+    flex-direction: row-reverse;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.095);
+  }
+
+  .header-container .logo-container {
+    display: none;
+  }
+
+  .header-container .links-container {
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .header-container .links-container .nav-links {
+    font-size: medium;
+    font-weight: 600;
+    color: var(--accent-blue);
+  }
+
+  .user-name-container {
+    display: none;
+  }
+}
