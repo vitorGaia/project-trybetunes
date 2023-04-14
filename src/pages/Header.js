@@ -32,7 +32,7 @@ class Header extends React.Component {
 
         <div className="logo-container">
           <Link
-            to="/search"
+            to="/project-trybetunes/search"
           >
             <img src={ logo } alt="logo trybe tunes" />
           </Link>
@@ -44,7 +44,7 @@ class Header extends React.Component {
             <Link
               className="nav-links"
               data-testid="link-to-search"
-              to="/search"
+              to="/project-trybetunes/search"
             >
               <BsSearch className="header-icons" />
               <span className="header-link-span">Pesquisar</span>
@@ -55,7 +55,7 @@ class Header extends React.Component {
             <Link
               className="nav-links"
               data-testid="link-to-favorites"
-              to="/favorites"
+              to="/project-trybetunes/favorites"
             >
               <BsStar className="header-icons" />
               <span className="header-link-span">Favoritas</span>
@@ -66,7 +66,7 @@ class Header extends React.Component {
             <Link
               className="nav-links"
               data-testid="link-to-profile"
-              to="/profile"
+              to="/project-trybetunes/profile"
             >
               <BsPersonCircle className="header-icons" />
               <span className="header-link-span">Perfil</span>

@@ -44,7 +44,7 @@ class Loguin extends React.Component {
     return (
       <div data-testid="page-login" className="loguin-page-container">
 
-        { loading === false && <Redirect to="/search" /> }
+        { loading === false && <Redirect to="/project-trybetunes/search" /> }
 
         {loading === true ? <Loading />
           : (

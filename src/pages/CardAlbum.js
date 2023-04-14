@@ -16,7 +16,7 @@ class CardAlbum extends React.Component {
         <div className="card-album">
           <Link
             data-testid={ `link-to-album-${collectionId}` }
-            to={ `/album/${collectionId}` }
+            to={ `/project-trybetunes/album/${collectionId}` }
           >
             <img alt="" src={ artworkUrl100 } />
           </Link>

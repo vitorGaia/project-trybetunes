@@ -65,7 +65,7 @@ class ProfileEdit extends React.Component {
     await updateUser(newProfile);
     this.setState({ loading: false });
     const { history } = this.props;
-    history.push('/profile');
+    history.push('/project-trybetunes/profile');
   };
 
   render() {

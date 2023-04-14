@@ -15,34 +15,34 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            path="/"
+            path="/project-trybetunes"
             component={ Loguin }
           />
           <Route
             exact
-            path="/search"
+            path="/project-trybetunes/search"
             component={ Search }
           />
           <Route
             exact
-            path="/album/:id"
+            path="/project-trybetunes/album/:id"
             render={ (props) => (<Album
               { ...props }
             />) }
           />
           <Route
             exact
-            path="/favorites"
+            path="/project-trybetunes/favorites"
             component={ Favorites }
           />
           <Route
             exact
-            path="/profile"
+            path="/project-trybetunes/profile"
             component={ Profile }
           />
           <Route
             exact
-            path="/profile/edit"
+            path="/project-trybetunes/profile/edit"
             component={ ProfileEdit }
           />
           <Route component={ NotFound } />
