@@ -97,3 +97,37 @@
  input:checked + .slider:before {
   transform: translateX(2.5em);
  }
+
+@media screen and (max-width: 576px) {
+  .music-card {
+    width: 95%;
+    box-sizing: border-box;
+    padding: 3px;
+  }
+
+  .track-namebox {
+    width: 25%;
+    overflow: auto;
+  }
+
+  .track-namebox p {
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .card-music-box-image {
+    display: none;
+  }
+
+  .player-container {
+    width: 75%;
+  }
+
+  .player-container audio {
+    width: 70%;
+  }
+
+  .card-music-box-image img {
+    display: none;
+  }
+}

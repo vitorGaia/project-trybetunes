@@ -54,3 +54,21 @@
   right: 0;
   overflow: auto;
 }
+
+@media screen and (max-width: 576px) {
+  .infos-container{
+    top: 10px;
+    gap: 20px;
+  }
+
+  .infos-container img {
+    margin-left: unset;
+    margin-left: 10px;
+  }
+
+  .show-album-container {
+    padding-top: 3px;
+    top: 200px;
+    height: 70.5%;
+  }
+}

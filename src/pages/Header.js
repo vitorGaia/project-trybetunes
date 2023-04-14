@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  BsSearch,
+  BsStar,
+  BsPersonCircle,
+} from 'react-icons/bs';
 import { getUser } from '../services/userAPI';
 import '../styles/Header.css';
 import logo from '../images/logo.svg';
-/* import searchIcon from '../images/Vector.svg';
-import favoritesIcon from '../images/🦆 icon _star empty_.svg';
-import profileIcon from '../images/🦆 icon _profile_.png';
- */
+
 class Header extends React.Component {
   state = {
     name: 'Carregando...',
@@ -39,35 +41,35 @@ class Header extends React.Component {
         <div className="links-container">
 
           <div className="nav-links-container">
-            {/* <img alt="icone de busca" src={ searchIcon } /> */}
             <Link
               className="nav-links"
               data-testid="link-to-search"
               to="/search"
             >
-              Pesquisar
+              <BsSearch className="header-icons" />
+              <span className="header-link-span">Pesquisar</span>
             </Link>
           </div>
 
           <div className="nav-links-container">
-            {/* <img alt="icone de favoritos" src={ favoritesIcon } /> */}
             <Link
               className="nav-links"
               data-testid="link-to-favorites"
               to="/favorites"
             >
-              Favoritas
+              <BsStar className="header-icons" />
+              <span className="header-link-span">Favoritas</span>
             </Link>
           </div>
 
           <div className="nav-links-container">
-            {/* <img alt="icone de perfil" src={ profileIcon } /> */}
             <Link
               className="nav-links"
               data-testid="link-to-profile"
               to="/profile"
             >
-              Perfil
+              <BsPersonCircle className="header-icons" />
+              <span className="header-link-span">Perfil</span>
             </Link>
           </div>
 

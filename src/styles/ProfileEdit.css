@@ -67,3 +67,22 @@
   background-color: var(--accent-blue2);
   color: white;
 }
+
+@media screen and (max-width: 576px) {
+  .profile-edit-content {
+    top: 0;
+    bottom: 64px;
+  }
+
+  .profile-edit-form {
+    width: 95%;
+  }
+
+  .profile-edit-form label {
+    width: 95%;
+  }
+
+  .profile-edit-form button {
+    width: 95%;
+  }
+}

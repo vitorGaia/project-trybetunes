@@ -33,6 +33,10 @@
   color: inherit;
 }
 
+.header-icons {
+  display: none;
+}
+
 .header-container .links-container .nav-links:hover {
   color: var(--accent-blue2);
   transform: scale(1.02);
@@ -59,7 +63,7 @@
   }
 
   .header-container .links-container {
-    width: 90%;
+    width: 70%;
     height: 100%;
     align-items: center;
     flex-direction: row-reverse;
@@ -67,9 +71,16 @@
   }
 
   .header-container .links-container .nav-links {
-    font-size: medium;
-    font-weight: 600;
     color: var(--accent-blue);
+  }
+
+  .header-link-span {
+    display: none;
+  }
+
+  .header-icons {
+    display: unset;
+    font-size: larger;
   }
 
   .user-name-container {
