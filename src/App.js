@@ -15,7 +15,7 @@ class App extends React.Component {
         <Switch>
           <Route
             exact
-            path=""
+            path="/"
             component={ Loguin }
           />
           <Route
